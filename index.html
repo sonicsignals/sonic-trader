@@ -1,0 +1,607 @@
+<!-- Signal Genaretor--------------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en" 
+            class="unselectable" 
+            ondragstart="return false;" 
+            oncontextmenu=" return false;" 
+            style="-moz-user-select: none;-webkit-user-select: none;-ms-user-select:none;user-select:none;-o-user-select:none;" 
+            unselectable="on"
+            onselectstart="return false;">
+<head>
+		<title>ALFA X-V11</title>
+		<link rel="icon" type="image/x-icon" href="https://market-qx.pro/profile/favicons/apple-touch-icon.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap"
+			rel="stylesheet"/>
+        
+<!-----------
+            <link
+         rel="stylesheet" type="text/css"
+         href="https://sonicsignals.github.io/sonic/backbone-design.css"/>
+-->>
+        
+         <style>
+   form{
+            font-family: sans-serif;
+        	font-size: 15px;
+			letter-spacing: 1.6px;
+			word-spacing: 1.8px;
+			color: #05d605;
+			text-transform: uppercase;
+		}
+		
+        .carousel-container { 
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px;
+            }
+        #image-display {
+            max-width: 100%;
+            width:auto;
+            height: auto;
+            
+            }  
+
+		.wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 1;
+			height: 100vh;
+			overflow-x: hidden;
+		}
+		
+		.wrapper .main-form {
+			display: flex;
+			align-items: center;
+			justify-content: space;
+			flex-direction: column;
+			flex: 2;
+			height: 100%;
+			padding: 15px;
+
+
+		}
+		
+		.wrapper .main-form form {
+			width: 80%;
+
+			padding: 20px;
+			background: rgba(0, 0, 0, 0.473);
+				
+			-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+			box-shadow: 0px 0px 15px 0px rgba(165, 12, 12, 0.15);
+			border-radius: 30px;
+		}
+		
+		.wrapper .main-form form .split-size {
+			width: 100%;
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+		
+		.wrapper .main-form form .split-size .form-group {
+			width: 49%;
+		}
+		
+		.wrapper .caption-area {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 1;
+			background: #FF7F50 url(https://i.imgur.com/5ZybQHM.png) no-repeat 100% 100% / contain;
+			height: 100%;
+			padding: 15px;
+			position: relative;
+		}
+		
+		.wrapper .caption-area .logo img {
+			position: absolute;
+			right: 50%;
+			top: 25px;
+			width: 35%;
+			transform: translateX(50%);
+		}
+		
+		.btn-primary {
+			background-color: rgb(255, 60, 0) ;
+			border-color: #ffffff;
+		}
+		
+		.btn-primary:hover {
+			background-image: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(255, 166, 0) 100%);
+			border-color: #FF7F50;
+		}
+		
+		@media (max-width: 1000px) {
+			.wrapper .main-form form {
+				width: 95%;
+			}
+		
+			.wrapper .main-form {
+				overflow-y: scroll;
+			}
+		
+			.wrapper .caption-area {
+				background: #FF7F50 url(https://i.imgur.com/5ZybQHM.png) no-repeat 100% 100% / cover;
+			}
+		
+			.wrapper .caption-area .logo img {
+				width: 55%;
+			}
+		
+			.wrapper .main-form form .split-size {
+				flex-direction: column;
+			}
+		
+			.wrapper .main-form form .split-size .form-group {
+				width: 100%;
+			}
+		}
+		
+		@media (max-width: 850px) {
+			.wrapper {
+				height: auto;
+			}
+		
+			.show-on-mobile {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+			}
+		
+			.show-on-mobile img {
+				width: 45%;
+			}
+		
+			.wrapper .main-form {
+				width: 100%;
+				flex: initial;
+			}
+		
+			.wrapper .caption-area {
+				display: none;
+			}
+		
+			.wrapper .main-form form .split-size {
+				flex-direction: initial;
+			}
+		
+			.wrapper .main-form form .split-size .form-group {
+				width: 49%;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			.wrapper .main-form form {
+				width: 100%;
+			}
+		
+			.wrapper .main-form {
+				overflow-y: scroll;
+			}
+		
+			.wrapper .main-form form .split-size {
+				flex-direction: column;
+			}
+		
+			.wrapper .main-form form .split-size .form-group {
+				width: 100%;
+			}
+		}
+		
+	
+		.bodies {
+			background: rgba(0, 0, 0, 0.651) fixed;
+			color: rgb(72, 190, 3);
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: normal 18px/1.6 ;
+			text-shadow: 0 1px 1px hsla(0, 79%, 82%, 0.2);
+			width: 98%;
+		
+		}
+		
+		.coppies {
+			width: 230px;
+			height: 50px;
+			border-radius: 8px;
+			background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(255, 166, 0) 100%);
+		}
+            
+        .coppies:hover {
+			color: #29c004;
+			background: rgb(0, 0, 0);
+		}
+
+        .btnn-primarys {
+			background-color: rgba(255, 255, 255, 0.123) ;
+			border-color: #ffffff;
+            border-radius : 20px;
+            
+		}
+		
+		.copy-a-s {
+			width: auto;
+			height: auto;
+			border-radius: 8px;
+			background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(255, 166, 0) 100%);
+		}
+
+		.copy-a-s:hover {
+			color: #25b301;
+			background: rgb(0, 0, 0);
+		}
+		
+
+        .generate{
+			width: auto;
+			height: 40px;
+			border-radius: 8px;
+			background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(255, 166, 0) 100%);
+		}
+
+		.generate:hover {
+			color: #25b301;
+			background: rgb(0, 0, 0);
+		}
+		
+		.note-1 {
+			--b: 3px;
+			/* border thickness */
+			--s: .45em;
+			/* size of the corner */
+			--color:  #ff5020;
+			font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+			padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+			color: rgb(241, 241, 241);
+			--_p: var(--s);
+			background:
+			conic-gradient(from 90deg at var(--b) var(--b), #05050500 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+			transition: .3s linear, color 0s, background-color 0s;
+			outline: var(--b) solid #f0eaea00;
+			outline-offset: .6em;
+			font-size: 15px;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+		    }
+		
+		    .note-1:hover,
+	        .note-1:focus-visible {
+		    --_p: 0px;
+		    outline-color: var(--color);
+			outline-offset: .05em;
+		          }
+
+
+              labels {
+                font-size: 14px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-style:italic ;
+                color: #00be00;
+                 
+                }
+            input {
+                border: 3.2px solid;
+                border-radius: 10px;
+                font-size: 18px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                margin: 0.35rem;
+                max-width: 195px;
+                padding: 0.2rem;
+                transition: border-color 3.5s ease-out;
+              }
+            
+              input:required:valid {
+                border-color: rgb(0, 241, 0);
+                border: 1.5h;
+              }
+              input:invalid {
+                border-color: red;
+              }
+              input:required:focus:valid {
+                background:  no-repeat 95% 50% lightgreen;
+                background-size: 25px;
+              }
+              input:focus:invalid {
+                background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% lightsalmon;
+                background-size: 25px;
+              }
+
+         </style>
+
+
+
+</head>
+
+<body style="background-image: url('https://wallpaperaccess.com/full/5838290.jpg')">
+    
+    <span class="wrapper">
+    <span class="main-form">
+  <form   style="margin: 1.5%;">
+<!---VIRTION CHANGE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--->     
+           <center> <div class="image-display">
+               <img style="margin: 0%; border-radius: 7px;"alt='carousel image' id='image-display' src=''/>
+               </div>
+            </center>
+      
+      <center>
+                <h3 class="bodies"> <i style=" color:#00be00;  font-size: 18px;">
+                <b>-- ALFA SV-11 Quotex Binary --<br>-- OTC CHart Signals --<br></b></i></h3>
+       </center>
+
+<!---VIRTION CHANGE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--->  
+
+
+                <span class="form-group">
+                    <label class="control-label" for="active" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Choose Assets </label>
+                    <select class="form-control" name="cbAtivo" id="cbAtivo">
+                        <option value="453254" selected="">SELECT ASSETS</option>
+                        <option value="0">ALL ASSETS</option>
+
+        <!-------------------------AUD--------------------->
+				<option value="AUD_CAD">AUD_CAD_OTC</option>
+				<option value="AUD_CHF">AUD_CHF_OTC</option>
+				<option value="AUD_JPY">AUD_JPY_OTC</option>
+				<option value="AUD_USD">AUD_USD_OTC</option>
+				<option value="AUD_NZD">AUD_NZD_OTC</option>
+		<!-------------------------AUD--------------------->
+        <!-------------------------USD--------------------->
+				<option value="USD_MXN">USD_MXN_OTC</option>
+				<option value="USD_CAD">USD_CAD_OTC</option>
+				<option value="USD_CHF">USD_CHF_OTC</option> 
+				<option value="USD_JPY">USD_JPY_OTC</option>
+				<option value="USD_INR">USD_INR_OTC</option>
+				<option value="USD_DKK">USD_DKK_OTC</option>
+				<option value="USD_NOK">USD_NOK_OTC</option>
+				<option value="USD_TRY">USD_TRY_OTC</option>
+				<option value="USD_BRL">USD_BRL_OTC</option>
+				<option value="USD_SGD">USD_SGD_OTC</option>
+				<option value="USD_ZAR">USD_ZAR_OTC</option>
+		<!-------------------------USD--------------------->
+		<!-------------------------EUR--------------------->
+				<option value="EUR_AUD">EUR_AUD_OTC</option>
+				<option value="EUR_CAD">EUR_CAD_OTC</option>
+				<option value="EUR_CHF">EUR_CHF_OTC</option>
+				<option value="EUR_GBP">EUR_GBP_OTC</option>
+				<option value="EUR_JPY">EUR_JPY_OTC</option>
+				<option value="EUR_NZD">EUR_NZD_OTC</option>
+				<option value="EUR_USD">EUR_USD_OTC</option>
+				<option value="EUR_SGD">EUR_SGD_OTC</option>
+		<!-------------------------EUR--------------------->
+		<!-------------------------CAD--------------------->
+				<option value="CAD_JPY">CAD_JPY_OTC</option>
+				<option value="CAD_CHF">CAD_CHF_OTC</option>
+		<!-------------------------CAD--------------------->
+		
+		<!-------------------------GBP--------------------->
+				<option value="GBP_AUD">GBP_AUD_OTC</option>
+				<option value="GBP_CAD">GBP_CAD_OTC</option>
+				<option value="GBP_CHF">GBP_CHF_OTC</option>
+				<option value="GBP_JPY">GBP_JPY_OTC</option>
+				<option value="GBP_NZD">GBP_NZD_OTC</option>
+				<option value="GBP_USD">GBP_USD_OTC</option>
+		<!-------------------------GBP--------------------->
+		<!-------------------------NZD--------------------->
+				<option value="NZD_CHF">NZD_CHF_OTC</option>
+				<option value="NZD_CAD">NZD_CAD_OTC</option>
+				<option value="NZD_JPY">NZD_JPY_OTC</option>
+				<option value="NZD_USD">NZD_USD_OTC</option>
+		<!-------------------------NZD--------------------->
+		<!--------------METAL AND CRYPTO------------------->
+				<option value="XAU_USD">GOLD_OTC</option>
+				<option value="XAG_USD">SILVER_OTC</option>
+				<option value="BTC_USD">BITCOIN_OTC</option>
+		<!--------------METAL AND CRYPTO------------------->
+
+
+        <!----------------------UPCOMMING------------------>
+               <option value="AUD_BDT">BELLOW 9 UPCOMING ASSETS</option>
+               <option value="USD_BDT">USD_BDT_OTC</option>
+               <option value="USD_DZD">USD_DZD_OTC</option>
+               <option value="USD_PRK">USD_PRK_OTC</option>
+               <option value="USD_IDR">USD_IDR_OTC</option>
+               <option value="USD_PHP">USD_PHP_OTC</option>
+               <option value="USD_ARS">USD_ARS_OTC</option>
+               <option value="USD_COP">USD_COP_OTC</option>
+               <option value="USD_NGN">USD_NGN_OTC</option>
+               <option value="USD_EGP">USD_EGP_OTC</option>
+        <!------------------------------------------------->
+        
+                    </select>
+                    <br>
+                </span>
+                <span class="split-size">
+                    <span class="form-group">
+                        <label class="control-label" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Minimum Percentage:</label>
+                        <select class="form-control">
+                            ><option value="100" selected>MAX</option>
+                        </select>
+                    </span>
+                    <span class="form-group">
+                        <label class="control-label"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Maximum Percentage:</label>
+                        <select class="form-control">
+                            ><option value="100" selected>MAX</option>
+                        </select>
+                    </span>
+                </span>
+                <span class="split-size">
+                    <span class="form-group">
+                        <label class="control-label" for="active" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Expiration in:</label>
+                        <select class="form-control" name="cbTimeFrame" id="selCandleTime">
+                            <option value="M1" selected>M1</option>
+                            <option value="M4">M2</option>
+                            <option value="M5">M5</option>
+                            <option value="M15">M15</option>
+                            <option value="M30">M30</option>
+                            <option value="H1">H1</option>
+                            <option value="H2">H2</option>
+                            <option value="H4">H4</option>
+                        </select>
+                    </span>
+                    <span class="form-group">
+                        <label class="control-label" for="active" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">To be analyzed:</label>
+
+                        <select class="form-control" name="Values &#8203;&#8203;To Check" id="selDays">
+							<option value="20">AUTO GOOD ACCURACY</option>
+							<option value="22">AUTO BETTER ACCURACY</option>
+							<option value="52"selected="">AUTO BEST ACCURACY</option>
+                            <option value="1">1 DAY</option>
+                            <option value="2">2 DAY</option>
+                            <option value="3">3 DAY</option>
+                            <option value="4">4 DAY</option>
+                            <option value="5">5 DAY</option>
+                            <option value="6">6 DAY</option>
+                            <option value="7">7 DAY</option>
+                            <option value="8">8 DAY</option>
+                            <option value="9">9 DAY</option>
+                            <option value="10">10 DAY</option>
+                            <option value="11">11 DAY</option>
+                            <option value="12">12 DAY</option>
+                            <option value="13">13 DAY</option>
+                            <option value="14">14 DAY</option>
+                            <option value="15">15 DAY</option>
+                            <option value="16">16 DAY</option>
+                            <option value="17">17 DAY</option>
+                            <option value="18">18 DAY</option>
+                            <option value="19">19 DAY</option>
+                            <option value="20">20 DAY</option>
+                            <option value="21">21 DAY</option>
+                            <option value="22">22 DAY</option>
+                            <option value="23">23 DAY</option>
+                            <option value="24">24 DAY</option>
+                            <option value="25">25 DAY</option>
+                            <option value="26">26 DAY</option>
+                            <option value="27">27 DAY</option>
+                            <option value="28">28 DAY</option>
+                            <option value="29">29 DAY</option>
+                            <option value="30">30 DAY</option>
+                            <option value="31">31 DAY</option>
+                            <option value="32">32 DAY</option>
+                            <option value="33">33 DAY</option>
+                            <option value="34">34 DAY</option>
+                            <option value="35">35 DAY</option>
+                            <option value="36">36 DAY</option>
+                            <option value="37">37 DAY</option>
+                            <option value="38">38 DAY</option>
+                            <option value="39">39 DAY</option>
+                            <option value="40">40 DAY</option>
+                            <option value="41">41 DAY</option>
+                            <option value="42">42 DAY</option>
+                            <option value="43">43 DAY</option>
+                            <option value="44">44 DAY</option>
+                            <option value="45">45 DAY</option>
+                            <option value="46">46 DAY</option>
+                            <option value="47">47 DAY</option>
+                            <option value="48">48 DAY</option>
+                            <option value="49">49 DAY</option>
+                            <option value="50">50 DAY</option>
+                            <option value="51">51 DAY</option>
+                            <option value="52">52 DAY</option>
+                        </select>
+                    </span>
+                </span>
+                
+
+        </span>
+    </span>
+    <span class="form-group">
+        <label class="control-label" for="active" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">Direction of Signals:</label>
+        <select class="form-control" name="cbTimeFrame" id="selOrderType">
+            <option value="CALL">CALL</option>
+            <option value="PUT">PUT</option>
+        </select>
+    </span>
+
+
+<br>
+    <span class="btn btnn-primarys btn-lg btn-block">
+    
+
+        <div class="form-container">
+            <input type="password" id="password" placeholder="Enter your ST-Licence" required>
+            <p id="errorMessage" style="color: rgb(214, 29, 29);font-size: 7px;display: none;">ST-Licence is required.</p>
+           <button type="button" onclick="verifyPassword()"  class="generate"><b>Generate</b></button>
+       </div>
+  
+   
+    </span>
+<br>
+<!----------------------------------------------------------------------------------------------->
+
+    <script>
+            const correctPassword = "123"; //licence key//
+            function verifyPassword(){ 
+            const passwordField = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+            if (passwordField.value === "") { errorMessage.style.display = 'block';}
+            else {errorMessage.style.display = 'none'; 
+            if (passwordField.value === correctPassword) {
+            getHistoric();  } else {alert('Incorrect ST-Licence. Please try again.');}}}
+    </script>
+<!----------------------------------------------------------------------------------------------->
+    
+
+
+
+
+    <span class="btn btnn-primarys btn-lg btn-block">
+		<div class="form-container">
+			<button id="copyButton" class="copy-a-s"><b>COPY All Signals</b></button>
+		</div>
+    </span>
+<br>
+
+
+    <center><h3 class="note-1">ONLY PAID SUBSCRIBERS ENJOY SIGNAL</h3></center>
+     
+</span>
+</form>	
+        <div id="preview" class="bodies" style="white-space: wrap; font-family: monospace; border: 5px solid #ffffff; padding: 15px; margin: 10px; border-radius: 20px;">
+       	<a id="myLink" href="https://t.me/sonicfuturetrader"></a>
+        <center><button class="coppies" onclick="openLinkById('myLink')">NEED HELP?</button>
+        </center> <center> <b style="font-size: 20px;">[Copyright © 2024 Sonic Trader All Rights Reserved] </b></center>
+        </div>
+   </span>
+</form>
+
+
+<!-- START ALGORITHM CODE ------------------------------------------------------------->
+
+<!-- Script import -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous">
+</script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous">
+</script>
+
+<!-- Script BACKBONE------------------------------------------------------------------------------->
+<script type="text/javascript" src="https://sonicsignals.github.io/sonic/backbone-SV11.js"></script>
+<script type="text/javascript" src="https://sonicsignals.github.io/sonic/quotex-vew.js"></script>
+<!-- Script BACKBONE------------------------------------------------------------------------------->
+
+
+
+</body>
+
+</html>
+
+<!-- Signal Genaretor--------------------------------------------------------------------------------------------------------------->
+
+  
