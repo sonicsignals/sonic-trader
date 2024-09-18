@@ -336,10 +336,10 @@ function getLocalDate() {
 		
     }
 
-    
-stringList2 += "\n______________________" +"\nMOST IMPORTANT NOTE : Every Hour Avoid First 10 Signals"+
+stringList2 += "\r________________________" +"\n\n\n\nMOST IMPORTANT NOTE : Every Hour Avoid First 10 Signals"+
 "\nFor example: [ 02:00, 21:03 ,12:05, 21:07, 07:09, 11:05 ,13:01, 24:08]"+
-;
+"\nCOPYRIGHT BY SONIC TRADER";
+
 
 document.getElementById("copyButton").addEventListener("click", function() {
 				var previewText = document.getElementById("preview").innerText; // Get the text content
@@ -537,3 +537,6 @@ function GetStringResult(value) {
         return true;
     }
     };
+
+
+
